@@ -27,10 +27,13 @@ func main() {
 
 	e.Static("/", "client/dist")
 
-	e.GET("/ping", func(c echo.Context) error {
-		return c.String(http.StatusOK, "pong\n")
-	})
-	e.POST("/translation", postTranslationHandler)
+	api := e.Group("/api")
+	{
+		api.GET("/ping", func(c echo.Context) error {
+			return c.String(http.StatusOK, "pong\n")
+		})
+		api.POST("/translation", postTranslationHandler)
+	}
 	e.Start(":4000")
 }
 
