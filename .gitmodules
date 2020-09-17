@@ -1,3 +1,0 @@
-[submodule "client"]
-	path = client
-	url = ssh://git@git.trap.jp:2200/YumizSui/honnyaku-client.git
