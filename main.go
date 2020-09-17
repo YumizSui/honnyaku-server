@@ -29,7 +29,7 @@ func main() {
 		return c.String(http.StatusOK, "pong\n")
 	})
 	e.POST("/translation", postTranslationHandler)
-	e.Start(":4000")
+	e.Start(":8080")
 }
 
 func postTranslationHandler(c echo.Context) error {
