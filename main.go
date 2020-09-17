@@ -25,6 +25,8 @@ func main() {
 	e := echo.New()
 	e.Use(middleware.Logger())
 
+	e.Static("/", "client/dist")
+
 	e.GET("/ping", func(c echo.Context) error {
 		return c.String(http.StatusOK, "pong\n")
 	})
