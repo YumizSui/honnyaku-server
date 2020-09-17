@@ -11,7 +11,7 @@ startup: |
 
 entrypoint: ./main
 
-http_proxy: 4000
+http_proxy: 8080
 
 branch:
   master: null
