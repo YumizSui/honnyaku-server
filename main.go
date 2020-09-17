@@ -40,5 +40,8 @@ func main() {
 func postTranslationHandler(c echo.Context) error {
 	req := Request{}
 	c.Bind(&req)
-	return c.JSON(http.StatusOK, Responce{Status: "success", Output: "This is a English sentence."})
+	if req.Target == "en" {
+		return c.JSON(http.StatusOK, Responce{Status: "success", Output: "This is a English sentence."})
+	}
+	return c.JSON(http.StatusOK, Responce{Status: "success", Output: "これは日本語の文章です．"})
 }
